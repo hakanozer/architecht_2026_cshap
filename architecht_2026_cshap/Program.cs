@@ -175,6 +175,109 @@
             bool registerStatus = objUser.Register("Erkan", "erkan@mail.com", "12345");
             Console.WriteLine("Register :" + registerStatus);
 
+            object objCall = objUser.Call();
+            // tür tespiti
+            if (objCall is int)
+            {
+                int convertedValue = (int)objCall; // tür dönüşümü
+                int sum = convertedValue + 50;
+                Console.WriteLine("Call methodundan dönen değer + 50: " + sum);
+            }
+
+            // tür dönüşümü
+            string ageString = "25";
+            int ageConverted = int.Parse(ageString);
+            Console.WriteLine("Yaş: " + ageConverted);
+
+            string heightString = "1,80";
+            double heightConverted = double.Parse(heightString);
+            Console.WriteLine("Boy: " + heightConverted);
+
+            bool isStudentConverted = bool.Parse("true");
+            Console.WriteLine("Öğrenci mi? " + isStudentConverted);
+
+            // Propery - get ve set
+            UserModel zehraModel = objUser.Profile();
+            Console.WriteLine("Zehra'nın Profili:");
+            Console.WriteLine("ID: " + zehraModel.Id);
+            Console.WriteLine("Name: " + zehraModel.Name);
+            Console.WriteLine("Surname: " + zehraModel.Surname);
+            Console.WriteLine("Email: " + zehraModel.Email);
+            Console.WriteLine("Password: " + zehraModel.Password);
+            Console.WriteLine("Age: " + zehraModel.Age);
+
+            // userModel dizisi oluşturup içerisine 3 farklı kullanıcı ekleyelim
+            // aliModel
+            UserModel aliModel = new();
+            aliModel.Id = 2;
+            aliModel.Name = "Ali";
+            aliModel.Surname = "Bilmem";
+            aliModel.Email = "ali@mail.com";
+            aliModel.Password = "12345";
+            aliModel.Age = 30;
+
+            // mehmetModel
+            UserModel mehmetModel = new();
+            mehmetModel.Id = 3;
+            mehmetModel.Name = "Mehmet";
+            mehmetModel.Surname = "Yılmaz";
+            mehmetModel.Email = "mehmet@mail.com";
+            mehmetModel.Password = "22222";
+            mehmetModel.Age = 28;
+
+            Console.WriteLine("==============================");
+            UserModel[] users = { zehraModel, aliModel, mehmetModel };
+
+            // Başlık
+            Console.WriteLine(
+                "{0,-5} {1,-15} {2,-15} {3,-25} {4,-15} {5,-5}",
+                "ID", "Name", "Surname", "Email", "Password", "Age"
+            );
+            Console.WriteLine(new string('-', 90));
+            // Veriler
+            foreach (var item in users)
+            {
+                Console.WriteLine(
+                    "{0,-5} {1,-15} {2,-15} {3,-25} {4,-15} {5,-5}",
+                    item.Id,
+                    item.Name,
+                    item.Surname,
+                    item.Email,
+                    item.Password,
+                    item.Age
+                );
+            }
+
+            Console.WriteLine(new string('-', 90));
+            Action action = new();
+            action.Execute();
+
+            // Hata denetimi - istisna
+            // Dış dünya ile yazılımın iletişim halinde olduğu alanlarda ortaya çıkar.
+            // kullanıcıdan veri alma, veri tabanı bağlantısı, dosya okuma, socket okuma gibi..
+            int size = 10;
+            try
+            {
+                // hata olma olasılığı olan kod parçaları buraya yazılır.
+                Console.WriteLine("Boyunuz (cm) ?");
+                double xx = double.Parse(Console.ReadLine() ?? "0");
+                Console.WriteLine("Kilonuz (kg) ?");
+                double yy = double.Parse(Console.ReadLine() ?? "0");
+
+                double end = xx / yy ;
+                Console.WriteLine("Sonuç :" + end);
+            }
+            catch (Exception ex)
+            {
+                // hata olduğu durumlarda çalışan gövde
+                Console.WriteLine("Lütfen 0 dan büyük bir değer giriniz!, " + ex.Message);
+            }finally
+            {
+                size = 0;
+            }
+            
+            Console.WriteLine("Size : " + size);
+            Console.WriteLine("This line call");
         }
     }
 }

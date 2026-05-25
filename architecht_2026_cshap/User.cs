@@ -39,5 +39,24 @@ namespace Architecht
             return true;
         }
 
+        public object Call()
+        {
+            Random rnd = new Random();
+            return 100;
+        }
+
+        public UserModel Profile()
+        {
+            UserModel zehraModel = new();
+            zehraModel.Id = 1;
+            zehraModel.Name = "Zehra";
+            zehraModel.Surname = "Yılmaz";
+            zehraModel.Email = "zehra@mail.com";
+            zehraModel.Password = "54321";
+            zehraModel.Age = 25;
+            return zehraModel;
+        }
+
+
     }
 }
