@@ -278,6 +278,9 @@
             
             Console.WriteLine("Size : " + size);
             Console.WriteLine("This line call");
+
+            Console.WriteLine("User Name: " + Action.userName);
+
         }
     }
 }

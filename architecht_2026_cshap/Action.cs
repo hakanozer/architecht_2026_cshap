@@ -4,6 +4,8 @@ namespace Architecht
 {
     public class Action
     {
+        public int userAge = 30;
+        public static string userName = "Ali Bilmem";
         
         public void Execute()
         {
@@ -84,6 +86,8 @@ namespace Architecht
             {
                 Console.WriteLine(user);
             }
+            
+            Console.WriteLine("JWT Secret Key: " + Const.jwtSecretKey);
 
         }
 

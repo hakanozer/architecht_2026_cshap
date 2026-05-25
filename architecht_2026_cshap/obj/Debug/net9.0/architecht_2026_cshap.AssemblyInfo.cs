@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("architecht_2026_cshap")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49e370da0b358bb9f0d3b34893bc1bf9f42c8ba1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af47d6bfe0ccf121146f7a823e7505813e417540")]
 [assembly: System.Reflection.AssemblyProductAttribute("architecht_2026_cshap")]
 [assembly: System.Reflection.AssemblyTitleAttribute("architecht_2026_cshap")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

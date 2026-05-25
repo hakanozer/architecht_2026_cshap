@@ -23,6 +23,8 @@ namespace Architecht
                     return true;
                 }
             }
+            Action.userName = "Erkan Bilirim";
+            Console.WriteLine("User Name: " + Action.userName);
             return false;
         }
 
